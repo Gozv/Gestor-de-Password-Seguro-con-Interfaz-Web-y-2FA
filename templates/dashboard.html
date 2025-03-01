@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Tus Contraseñas</h2>
+<table class="table">
+    <tr>
+        <th>Servicio</th>
+        <th>Contraseña</th>
+    </tr>
+    {% for pwd in passwords %}
+    <tr>
+        <td>{{ pwd.service }}</td>
+        <td>{{ pwd.password }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('add_password') }}" class="btn btn-primary">Agregar Contraseña</a>
+{% endblock %}
