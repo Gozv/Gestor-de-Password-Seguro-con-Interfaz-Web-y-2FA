@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Configura 2FA</h2>
+<img src="{{ qrcode(totp_uri) }}" alt="QR Code">
+<p>Escanea este código QR con Google Authenticator</p>
+<a href="{{ url_for('verify_2fa') }}" class="btn">Continuar</a>
+{% endblock %}
