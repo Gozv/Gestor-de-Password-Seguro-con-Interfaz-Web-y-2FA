@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Bienvenido al Gestor de Contraseñas Seguro</h1>
+{% if current_user.is_authenticated %}
+    <p>Ve a tu <a href="{{ url_for('dashboard') }}">Dashboard</a> para gestionar contraseñas.</p>
+{% else %}
+    <p>Por favor <a href="{{ url_for('login') }}">inicia sesión</a> o <a href="{{ url_for('register') }}">regístrate</a>.</p>
+{% endif %}
+{% endblock %}
